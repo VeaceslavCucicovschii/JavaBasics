@@ -1,0 +1,2 @@
+Some text from the file
+Appended text!
