@@ -46,35 +46,57 @@ public class Main {
 //
 //        myInterface1.message(name, symbol);
 
-        Set<String> names =  new HashSet<>();
-        names.add("John");
-        names.add("Sam");
-        names.add("Skyler");
-        names.add("Daniel");
+//        Set<String> names =  new HashSet<>();
 //        names.add("John");
+//        names.add("Sam");
+//        names.add("Skyler");
+//        names.add("Daniel");
+////        names.add("John");
+//
+////        names.forEach(System.out::println);
+//
+//        Iterator<String> namesIterator = names.iterator();
+//        while (namesIterator.hasNext()) {
+//            System.out.println(namesIterator.next());
+//        }
+//
+////        List<Integer> numberList = new ArrayList<>();
+////        numberList.add(1);
+////        numberList.add(3);
+////        numberList.add(2);
+////        numberList.add(2);
+////        numberList.add(1);
+//
+//        int[] numberList = {0, 0, 1, 1, 2, 3};
+//
+//        Set<Integer> numberSet = new HashSet<>();
+////        numberSet.addAll(numberList);
+//
+//        for(int index : numberList)
+//            numberSet.add(index);
+//
+//        System.out.println(numberSet);
 
-//        names.forEach(System.out::println);
+        HashMap<String, Integer> empIds = new HashMap<>();
+        empIds.put("John", 7826);
+        empIds.put("Carl", 2125);
+        empIds.put("Jane", 2786);
 
-        Iterator<String> namesIterator = names.iterator();
-        while (namesIterator.hasNext()) {
-            System.out.println(namesIterator.next());
-        }
+        System.out.println(empIds);
+        System.out.println(empIds.get("John"));
+        System.out.println(empIds.containsKey("Carl"));
+        System.out.println(empIds.containsValue(2786));
 
-//        List<Integer> numberList = new ArrayList<>();
-//        numberList.add(1);
-//        numberList.add(3);
-//        numberList.add(2);
-//        numberList.add(2);
-//        numberList.add(1);
+        empIds.put("John", 6722);
+        System.out.println(empIds);
 
-        int[] numberList = {0, 0, 1, 1, 2, 3};
+        empIds.replace("Kramer", 6722);
+        System.out.println(empIds);
 
-        Set<Integer> numberSet = new HashSet<>();
-//        numberSet.addAll(numberList);
+        empIds.putIfAbsent("John", 222);
+        System.out.println(empIds);
 
-        for(int index : numberList)
-            numberSet.add(index);
-
-        System.out.println(numberSet);
+        empIds.remove("John");
+        System.out.println(empIds);
     }
 }
