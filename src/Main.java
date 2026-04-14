@@ -3,6 +3,7 @@ import LambdaExpressions.MyInterface;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -30,18 +31,50 @@ public class Main {
 //            System.out.println("Error writing file.");
 //            e.printStackTrace();
 //        }
-        String name = "John";
-        char symbol = '!';
 
-        MyInterface myInterface = (x, y) -> {
-            System.out.println("Hello World!");
-            System.out.println("It is a nice day! " + x + y);
-        };
+//        String name = "John";
+//        char symbol = '!';
+//
+//        MyInterface myInterface = (x, y) -> {
+//            System.out.println("Hello World!");
+//            System.out.println("It is a nice day! " + x + y);
+//        };
+//
+//        MyInterface myInterface1 = (x, y) -> {
+//            System.out.println("Hello " + x + y);
+//        };
+//
+//        myInterface1.message(name, symbol);
 
-        MyInterface myInterface1 = (x, y) -> {
-            System.out.println("Hello " + x + y);
-        };
-        
-        myInterface1.message(name, symbol);
+        Set<String> names =  new HashSet<>();
+        names.add("John");
+        names.add("Sam");
+        names.add("Skyler");
+        names.add("Daniel");
+//        names.add("John");
+
+//        names.forEach(System.out::println);
+
+        Iterator<String> namesIterator = names.iterator();
+        while (namesIterator.hasNext()) {
+            System.out.println(namesIterator.next());
+        }
+
+//        List<Integer> numberList = new ArrayList<>();
+//        numberList.add(1);
+//        numberList.add(3);
+//        numberList.add(2);
+//        numberList.add(2);
+//        numberList.add(1);
+
+        int[] numberList = {0, 0, 1, 1, 2, 3};
+
+        Set<Integer> numberSet = new HashSet<>();
+//        numberSet.addAll(numberList);
+
+        for(int index : numberList)
+            numberSet.add(index);
+
+        System.out.println(numberSet);
     }
 }
